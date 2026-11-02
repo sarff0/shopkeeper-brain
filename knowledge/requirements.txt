@@ -1,0 +1,25 @@
+# PyTorch 2.8.0 does not publish cu130 wheels. Use cu128, which works with
+# newer NVIDIA drivers and keeps torch/torchvision aligned with the current env.
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+torch==2.8.0+cu128
+torchvision==0.23.0+cu128
+
+# 剩下的包会优先匹配你本地配置的默认清华源
+minio
+langchain-openai
+langgraph
+grandalf
+pymilvus[milvus_lite]
+pymilvus[model]
+sentence-transformers
+neo4j
+pymongo
+mineru[all]
+openai-agents
+
+# ---- 以下三个原为隐式传递依赖，本地实测缺失会导致导入链崩溃 ----
+# 显式钉到已验证可用的版本，重建 .venv 时不会再缺
+langchain-text-splitters==1.1.2   # document_split_node 文本切分用
+FlagEmbedding==1.4.0              # BGE-M3 dense+sparse 嵌入底层，pymilvus.model 包装它（缺失嵌入模型会是 None）
+beautifulsoup4==4.15.0           # md_img_node 解析 HTML 图片标签用

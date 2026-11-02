@@ -1,0 +1,50 @@
+# ---------- 密钥 / 环境配置 ----------
+.env
+*.env
+!.env.example
+
+# ---------- Python 虚拟环境 ----------
+.venv/
+venv/
+knowledge/.venv/
+knowledge/.cuda-shim/
+
+# ---------- Python 缓存 ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ---------- 运行时产物 / 临时文件 ----------
+*.log
+logs/
+knowledge/.tmp/
+knowledge/temp_data/
+knowledge/.vs/
+knowledge/processor/import_process/import_temp_dir/
+knowledge/processor/import_process/output_temp_dir/
+
+# ---------- 编辑器 / IDE ----------
+.idea/
+.vscode/
+*.swp
+
+# ---------- 本地 Agent 工具配置 ----------
+.workbuddy/
+.claude/
+.agents/
+
+# ---------- 个人资料 / 非项目内容 ----------
+outputs/
+kamacoder_llm/
+
+# ---------- 临时测试脚本 ----------
+/1.py
+/1.html
+knowledge/test/
+
+# ---------- 系统文件 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
